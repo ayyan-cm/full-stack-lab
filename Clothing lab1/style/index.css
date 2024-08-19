@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.home-a {
+  margin: 2rem;
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.loginsignup {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  width: fit-content;
+}
+
+.loginsignup form {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.loginsignup input,
+button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 15rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.signup {
+  display: none;
+}

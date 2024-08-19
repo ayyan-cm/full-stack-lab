@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of fashion</title>
+    <link rel="stylesheet" href="./style/home.css" />
+    <link rel="icon" href="./src/fav.jpeg" type="image/png" />
+  </head>
+    <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Men</li>
+          <li>Women</li>
+          <li>Kids</li>
+        </ul>
+      </nav>
+
+      <nav>
+        <ul>
+          <li>Profile</li>
+          <li>Wishlist</li>
+          <li>Cart (<span id="cart-count">0</span>)</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div style="margin: 1rem">
+        <h1>World of fashion</h1>
+        <p>Get the best fashion items at the best prices</p>
+      </div>
+      <div>
+        <div class="collection">
+          <h2>Trending in Men's Collection</h2>
+          <div class="collection-list">
+            <div class="collection-cards">
+              <img src="./src/batmat-hoodie.png" alt="Batman Hoodie" />
+              <p>$29.99</p>
+              <button onclick="addToCart('Batman Hoodie', 29.99)">Add to Cart</button>
+            </div>
+            <!-- Repeat the above block for other items -->
+            <div class="collection-cards-more">
+              <a href="#">More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="collection">
+          <h2>Trending in Men's Collection</h2>
+          <div class="collection-list">
+            <div class="collection-cards">
+              <img src="./src/blue-jean.png" alt="Blue Jean" />
+              <p>$39.99</p>
+              <button onclick="addToCart('Blue Jean', 39.99)">Add to Cart</button>
+            </div>
+            <!-- Repeat the above block for other items -->
+            <div class="collection-cards-more">
+              <a href="#">More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <div class="cart-info">
+      <h3>Cart</h3>
+      <p id="cart-items">No items in cart</p>
+      <p>Total: $<span id="total-price">0.00</span></p>
+      <button>Buy</button>
+    </div>
+
+    <script>
+      let cart = [];
+      let totalPrice = 0;
+
+      function addToCart(item, price) {
+        cart.push({ item, price });
+        totalPrice += price;
+        updateCartDisplay();
+      }
+
+      function updateCartDisplay() {
+        const cartCount = document.getElementById('cart-count');
+        const cartItems = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+
+        cartCount.textContent = cart.length;
+        cartItems.textContent = cart.length > 0 
+          ? cart.map(item => item.item + ' - $' + item.price.toFixed(2)).join(', ') 
+          : 'No items in cart';
+        totalPriceElement.textContent = totalPrice.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of fashion</title>
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="icon" href="./src/fav.jpeg" type="image/png" />
+  </head>
+  <body>
+    <main>
+      <a href="./home.html" class="home-a">Home</a>
+      <div class="form-container">
+        <div class="loginsignup login">
+          <h1>Login</h1>
+          <form action="">
+            <input type="email" placeholder="Email" id="email" />
+            <input type="password" placeholder="Password" id="password" />
+            <button type="submit" onclick="checkCredentials()">Login</button>
+          </form>
+          <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+        </div>
+        <div class="loginsignup signup">
+          <h1>Sign up</h1>
+          <form action="">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Sign up</button>
+          </form>
+          <p>Already have an account? <a href="./login.html">Login</a></p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function checkCredentials() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (email === "admin@mail.com" && password === "admin") {
+          window.location.href = "./home.html";
+        } else {
+          alert("Wrong credentials");
+        }
+      }
+    </script>
+  </body>
+</html>
